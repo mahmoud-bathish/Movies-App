@@ -13,9 +13,9 @@
 </head>
 <body>
     <!-- header -->
-    <header class="header active">
+    <header class="header " data-header>
         <div class="container">
-            <div class="overlay" data-overlay></div>
+            <div class="overlay  " data-overlay></div>
             <a href="./index.html" class="logo" id="logo1">
                 <img src="./images/logo.svg" alt="Filmlane logo">
             </a>
@@ -48,12 +48,12 @@
                 <ion-icon name="reorder-two"></ion-icon>
             </button>
 
-            <nav class="navbar active" data-navbar>
+            <nav class="navbar " data-navbar>
                 <div class="navbar-top">
                     <a href="./index.html" class="logo">
                         <img src="./images/logo.svg" alt="Filmlane logo">
                     </a>
-                    <button class="menu-close-btn">
+                    <button class="menu-close-btn" data-menu-close-btn>
                         <ion-icon name="close-outline"></ion-icon>
                     </button>
                 </div>
@@ -101,7 +101,185 @@
         </div>
     </header>
     <!-- Finish header  -->
+    <main>
+        <article>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <p class="hero-subtitle">Filmlane</p>
+                        <h1 class="h1 hero-title">
+                            Unlimited <strong>Movie</strong>, TV's shows & More
+                        </h1>
+                        <div class="meta-wrapper">
+                            <div class="badge-wrapper">
+                                <div class="badge badge-fill">PG 18</div>
+                                <div class="badge badge-outline">HD</div>
+                            </div>
+                            <div class="ganre-wrapper">
+                                <a href="">Romance</a>
+                                <a href="">Drama</a>
+                            </div>
+                            <div class="date-time">
+                                <div>
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <time datetime="2022">2022</time>
+                                </div>
 
+                                <div>
+                                    <ion-icon name="time-outline"></ion-icon>
+                                    <time datetime="PT128M">120 min</time>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">
+                            <ion-icon name="play"></ion-icon>
+                        </button>
+                        <span>Watch Now</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- upcoming -->
+
+
+            <section class="upcoming">
+                <div class="container">
+                    <div class="flex-wrapper">
+                        <div class="title-wrapper">
+                            <p class="section-subtitle">Online Streaming</p>
+                            <h2 class="h2 section-title">Upcoming Movies</h2>
+                        </div>
+                        <ul class="filter-list">
+                            <li>
+                                <button class="filter-btn">Movies</button>
+                            </li>
+                            <li>
+                                <button class="filter-btn">TV Shows</button>
+                            </li>
+                            <li>
+                                <button class="filter-btn">Anime</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="movies-list has-scrollbar">
+                        <li>
+                            <div class="movie-card">
+                                <a href="./movie-details.html">
+                                    <figure class="card-banner">
+                                        <img src="./images/upcoming-1.png" alt="The Northman movie poster">
+                                    </figure>
+                                </a>
+
+                                <div class="title-wrapper">
+                                    <a href="./movie-details.html">
+                                        <h3 class="card-title">The Northman</h3>
+                                    </a>
+                                    <time datetime="2022">2022</time>
+                                </div>
+
+                                <div class="card-meta">
+                                    <div class="badge badge-outline">HD</div>
+                                    <div class="duration">
+                                        <ion-icon name="time-outline"></ion-icon>
+                                        <time datetime="PT127M">137 min</time>
+                                    </div>
+                                    <div class="rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <data>8.5</data>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="movie-card">
+                                <a href="./movie-details.html">
+                                    <figure class="card-banner">
+                                        <img src="./images/upcoming-2.png" alt="Doctor Strange in the Multiverse of Madness movie poster">
+                                    </figure>
+                                </a>
+
+                                <div class="title-wrapper">
+                                    <a href="./movie-details.html">
+                                        <h3 class="card-title">Doctor Strange in the Multiverse of Madness</h3>
+                                    </a>
+                                    <time datetime="2022">2022</time>
+                                </div>
+
+                                <div class="card-meta">
+                                    <div class="badge badge-outline">4K</div>
+                                    <div class="duration">
+                                        <ion-icon name="time-outline"></ion-icon>
+                                        <time datetime="PT126M">126 min</time>
+                                    </div>
+                                    <div class="rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <data>NR</data>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="movie-card">
+                                <a href="./movie-details.html">
+                                    <figure class="card-banner">
+                                        <img src="./images/upcoming-3.png" alt="Memory movie poster">
+                                    </figure>
+                                </a>
+
+                                <div class="title-wrapper">
+                                    <a href="./movie-details.html">
+                                        <h3 class="card-title">Memory</h3>
+                                    </a>
+                                    <time datetime="2022">2022</time>
+                                </div> 
+
+                                <div class="card-meta">
+                                    <div class="badge badge-outline">2K</div>
+                                    <div class="duration">
+                                        <ion-icon name="time-outline"></ion-icon>
+                                        <time datetime="">N/A</time>
+                                    </div>
+                                    <div class="rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <data>NR</data>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="movie-card">
+                                <a href="./movie-details.html">
+                                    <figure class="card-banner">
+                                        <img src="./images/upcoming-4.png" alt="The Unbearable Weight of Massive Talent movie poster
+                                        ">
+                                    </figure>
+                                </a>
+
+                                <div class="title-wrapper">
+                                    <a href="./movie-details.html">
+                                        <h3 class="card-title">The Unbearable Weight of Massive Talent</h3>
+                                    </a>
+                                    <time datetime="2022">2022</time>
+                                </div>
+
+                                <div class="card-meta">
+                                    <div class="badge badge-outline">HD</div>
+                                    <div class="duration">
+                                        <ion-icon name="time-outline"></ion-icon>
+                                        <time datetime="PT107M">107 min</time>
+                                    </div>
+                                    <div class="rating">
+                                        <ion-icon name="star"></ion-icon>
+                                        <data>NR</data>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </main>
 
 
 
