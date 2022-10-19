@@ -162,6 +162,10 @@ body.active {
     margin-bottom: 50px;
 }
 
+.logoo {
+    display: flex;
+}
+
 .badge-wrapper,
 .ganre-wrapper,
 .date-time {
@@ -370,7 +374,7 @@ body.active {
 /* header  */
 
 .header {
-    position: fixed;
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
@@ -577,6 +581,15 @@ body.active {
     margin-bottom: 50px;
     max-width: max-content;
 }
+
+.service-banner a {
+    right: 110px;
+}
+
+.tv-series {
+    padding: 10px;
+}
+
 
 .service-banner img {
     width: 100%;
@@ -1035,12 +1048,10 @@ body.active {
         grid-template-columns: 1fr 1fr;
         gap: 60px 30px;
     }
-
-
     /* Hero  */
 
-    .hero {min-height: unset;}
-    .hero-content {margin-top: 20px;}
+    /* .hero {min-height: unset;} */
+    /* .hero-content {margin-top: 20px;} */
 
     /* upcoming */
 
@@ -1066,6 +1077,7 @@ body.active {
     .search-btn {
         background-color: transparent;
     }
+
 }
 
 @media (min-width:768px) {
@@ -1133,23 +1145,6 @@ body.active {
     }
 
     .service-content {padding-inline:40px;}
-
-    /* CTA   */
-    .cta-form {
-        position: relative;
-        max-width: 530px;
-        margin-inline: auto;
-    }
-
-    .cta .email-field {
-        margin-bottom: 0;
-    }
-    .cta-from-btn {
-        position:absolute;
-        top: 2px;
-        right: 2px;
-        bottom: 2px;
-    }
 
     .footer-brand-wrapper .logo {margin: 0;}
 
@@ -1245,24 +1240,6 @@ body.active {
 
     .service-banner {margin-bottom: 0;}
     .service-btn {right: 111px;}
-    
-    .cta {text-align: left;}
-    .cta .title-wrapper {
-        margin-bottom: 0;
-        width: 100%;
-    }
-
-    .cta .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .cta-form {
-        margin-inline: 0;
-        max-width: unset;
-        width: 100%;
-    }
 
     #language {
         width: 60px;
