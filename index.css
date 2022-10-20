@@ -809,7 +809,7 @@ body.active {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
 }
 
 .footer-link {
