@@ -32,70 +32,65 @@ window.addEventListener("scroll", function () {
 //Fetching Data
 
 //Upcoming movies
-
-
 fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=56a546836d8b52c7e7cdc77d062ed8c7&language=en-US&page=1')
     .then(response => response.json())
     .then(json => {
         let moviesList = document.querySelectorAll(".movies-list");
         let originalContent = `
-                <div class="movie-card">
-                    <a href="./movie-details.html">
-                        <figure class="card-banner">
-                            <img src="AA" alt="AltA">
-                        </figure>
-                    </a>
+        <div class="movie-card">
+        
+        <figure class="card-banner">
+        <div class="details-card">Adi</div>
+        
+            <img src="AA" alt="AltA">
+        </figure>
 
-                    <div class="title-wrapper">
-                        <a href="./movie-details.html">
-                            <h3 class="card-title">titleA</h3>
-                        </a>
-                        <time datetime="2022">2022A</time>
-                        </div>
-                        
-                        <div class="card-meta">
-                        <div class="badge badge-outline">HD</div>
-                        <div class="duration">
-                        <span>lang:</span> langA
-                        
-                        </div>
-                        <div class="rating">
-                        <ion-icon name="star"></ion-icon>
-                        <data>8.5A</data>
-                        </div>
-                        </div>
-                        </div>
+        <div class="title-wrapper">
+                <h3 class="card-title">titleA</h3>
+            <time datetime="2022">2022A</time>
+            </div>
+            
+            <div class="card-meta">
+            <div class="badge badge-outline">HD</div>
+            <div class="duration">
+            <span>lang:</span> langA
+            
+            </div>
+            <div class="rating">
+            <ion-icon name="star"></ion-icon>
+            <data>8.5A</data>
+            </div>
+            </div>
+            </div>
                         `;
         for (let i = 0; i < json.results.length; i++) {
             let myLi = document.createElement("li");
             let customizeContent = originalContent;
             customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
             customizeContent = customizeContent.replace("titleA", json.results[i].title);
-            customizeContent = customizeContent.replace("2022A", json.results[i].release_date);
+            customizeContent = customizeContent.replace("2022A", json.results[i].release_date.split("-")[0]);
             customizeContent = customizeContent.replace("8.5A", json.results[i].vote_average);
             customizeContent = customizeContent.replace("langA", json.results[i].original_language);
             customizeContent = customizeContent.replace("AltA", `${json.results[i].title} movie`);
+            customizeContent = customizeContent.replace("Adi", json.results[i].overview);
             myLi.innerHTML = customizeContent;
             moviesList[0].appendChild(myLi);
         }
     })
 
+//Top Rated
 fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=56a546836d8b52c7e7cdc77d062ed8c7&language=en-US&page=1')
     .then(response => response.json())
     .then(json => {
         let moviesList = document.querySelectorAll(".movies-list");
         let originalContent = `
                 <div class="movie-card">
-                    <a href="./movie-details.html">
                         <figure class="card-banner">
+                        <div class="details-card">Adi</div>
                             <img src="AA" alt="AltA">
                         </figure>
-                    </a>
-
                     <div class="title-wrapper">
-                        <a href="./movie-details.html">
                             <h3 class="card-title">titleA</h3>
-                        </a>
                         <time datetime="2022">2022A</time>
                         </div>
                         
@@ -120,29 +115,26 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=56a546836d8b52c7e7cd
             customizeContent = customizeContent.replace("2022A", json.results[i].release_date.split("-")[0]);
             customizeContent = customizeContent.replace("8.5A", json.results[i].vote_average);
             customizeContent = customizeContent.replace("langA", json.results[i].original_language);
-            customizeContent = customizeContent.replace("AltA", `${json.results[i].title} movie`);
+            customizeContent = customizeContent.replace("AltA", `${json.results[i].name} movie`);
+            customizeContent = customizeContent.replace("Adi", json.results[i].overview);
             myLi.innerHTML = customizeContent;
             moviesList[1].appendChild(myLi);
             console.log();
         }
     })
-
+//TV Show
 fetch('https://api.themoviedb.org/3/tv/popular?api_key=56a546836d8b52c7e7cdc77d062ed8c7&language=en-US&page=1')
     .then(response => response.json())
     .then(json => {
         let moviesList = document.querySelectorAll(".movies-list");
         let originalContent = `
                 <div class="movie-card">
-                    <a href="./movie-details.html">
                         <figure class="card-banner">
+                        <div class="details-card">Adi</div>
                             <img src="AA" alt="AltA">
                         </figure>
-                    </a>
-
                     <div class="title-wrapper">
-                        <a href="./movie-details.html">
                             <h3 class="card-title">titleA</h3>
-                        </a>
                         <time datetime="2022">2022A</time>
                         </div>
                         
@@ -168,6 +160,7 @@ fetch('https://api.themoviedb.org/3/tv/popular?api_key=56a546836d8b52c7e7cdc77d0
             customizeContent = customizeContent.replace("8.5A", json.results[i].vote_average);
             customizeContent = customizeContent.replace("langA", json.results[i].original_language);
             customizeContent = customizeContent.replace("AltA", `${json.results[i].name} movie`);
+            customizeContent = customizeContent.replace("Adi", json.results[i].overview);
             myLi.innerHTML = customizeContent;
             moviesList[2].appendChild(myLi);
         }
@@ -185,16 +178,12 @@ topp.onclick = function () {
     .then(json =>{
         let originalContent = `
         <div class="movie-card">
-            <a href="./movie-details.html">
                 <figure class="card-banner">
+                <div class="details-card">Adi</div>
                     <img src="AA" alt="AltA">
                 </figure>
-            </a>
-
             <div class="title-wrapper">
-                <a href="./movie-details.html">
                     <h3 class="card-title">titleA</h3>
-                </a>
                 <time datetime="2022">2022A</time>
                 </div>
                 
@@ -224,6 +213,7 @@ for (let i = 0; i < json.results.length; i++) {
     customizeContent = customizeContent.replace("8.5A", json.results[i].vote_average);
     customizeContent = customizeContent.replace("langA", json.results[i].original_language);
     customizeContent = customizeContent.replace("AltA", `${json.results[i].name} movie`);
+    customizeContent = customizeContent.replace("Adi", json.results[i].overview);
     myLi.innerHTML = customizeContent;
     ulTopRated.appendChild(myLi);
 }
@@ -240,16 +230,12 @@ popularr.onclick = function () {
     .then(json =>{
         let originalContent = `
         <div class="movie-card">
-            <a href="./movie-details.html">
                 <figure class="card-banner">
+                <div class="details-card">Adi</div>
                     <img src="AA" alt="AltA">
                 </figure>
-            </a>
-
             <div class="title-wrapper">
-                <a href="./movie-details.html">
-                    <h3 class="card-title">titleA</h3>
-                </a>
+                <h3 class="card-title">titleA</h3>
                 <time datetime="2022">2022A</time>
                 </div>
                 
@@ -279,6 +265,7 @@ popularr.onclick = function () {
             customizeContent = customizeContent.replace("8.5A", json.results[i].vote_average);
             customizeContent = customizeContent.replace("langA", json.results[i].original_language);
             customizeContent = customizeContent.replace("AltA", `${json.results[i].name} movie`);
+            customizeContent = customizeContent.replace("Adi", json.results[i].overview);
             myLi.innerHTML = customizeContent;
             ulTopRated.appendChild(myLi);
         }
@@ -289,5 +276,6 @@ window.onload = function () {
     popularr.classList.add("focused");
 }
 
-
-
+document.body.addEventListener("click",function(e) {
+    e.target.querySelector(".details-card").classList.toggle("active");
+});
