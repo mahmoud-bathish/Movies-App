@@ -554,7 +554,7 @@ body.active {
     gap: 10px;
 }
 
-.upcoming .filter-btn {
+.filter-btn {
     color: var(--white);
     background: var(--raisin-black);
     font-size: var(--fs-11);
@@ -564,7 +564,10 @@ body.active {
     border-radius: 50px;
 }
 
-.upcoming .filter-btn:focus {
+.filter-btn:focus {
+    border-color: var(--citrine);
+}
+.filter-btn.focused {
     border-color: var(--citrine);
 }
 
@@ -704,7 +707,7 @@ body.active {
     margin-bottom: 50px;
 }
 
-.top-rated .filter-btn {
+/* .top-rated .filter-btn {
     position: relative;
     background: var(--rich-black-fogra-39);
     color: var(--light-gray);
@@ -728,7 +731,7 @@ body.active {
 }
 
 .top-rated .filter-btn:focus::before {left: 0;}
-.top-rated .filter-btn:focus::after {right: 0;}
+.top-rated .filter-btn:focus::after {right: 0;} */
 
 .tv-series {
     background: url("./images/tv-series-bg.jpg");
@@ -1033,6 +1036,11 @@ body.active {
     background-color: hsla(216,21%,23%,1);
     border-radius: 5px;
 }
+
+.duration span {
+    color: var(--citrine);
+}
+
 /* Make it Responsive */
 @media (min-width:550px) {
     :root {
