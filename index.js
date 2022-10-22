@@ -174,9 +174,9 @@ topp.onclick = function () {
     let container = document.querySelectorAll(".movies-list");
     container[2].parentNode.removeChild(container[2]);
     fetch('https://api.themoviedb.org/3/tv/top_rated?api_key=56a546836d8b52c7e7cdc77d062ed8c7&language=en-US&page=1')
-    .then(response => response.json())
-    .then(json =>{
-        let originalContent = `
+        .then(response => response.json())
+        .then(json => {
+            let originalContent = `
         <div class="movie-card">
                 <figure class="card-banner">
                 <div class="details-card">Adi</div>
@@ -200,24 +200,24 @@ topp.onclick = function () {
                 </div>
                 </div>
                 `;
-                let sectionOfTopRated = document.getElementById("tvShows");
-                let ulTopRated = document.createElement("ul");
-                sectionOfTopRated.appendChild(ulTopRated); 
-                ulTopRated.className = 'movies-list';
-for (let i = 0; i < json.results.length; i++) {
-    let myLi = document.createElement("li");
-    let customizeContent = originalContent;
-    customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
-    customizeContent = customizeContent.replace("titleA", json.results[i].name);
-    customizeContent = customizeContent.replace("2022A", json.results[i].first_air_date.split("-")[0]);
-    customizeContent = customizeContent.replace("8.5A", json.results[i].vote_average);
-    customizeContent = customizeContent.replace("langA", json.results[i].original_language);
-    customizeContent = customizeContent.replace("AltA", `${json.results[i].name} movie`);
-    customizeContent = customizeContent.replace("Adi", json.results[i].overview);
-    myLi.innerHTML = customizeContent;
-    ulTopRated.appendChild(myLi);
-}
-    })
+            let sectionOfTopRated = document.getElementById("tvShows");
+            let ulTopRated = document.createElement("ul");
+            sectionOfTopRated.appendChild(ulTopRated);
+            ulTopRated.className = 'movies-list';
+            for (let i = 0; i < json.results.length; i++) {
+                let myLi = document.createElement("li");
+                let customizeContent = originalContent;
+                customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
+                customizeContent = customizeContent.replace("titleA", json.results[i].name);
+                customizeContent = customizeContent.replace("2022A", json.results[i].first_air_date.split("-")[0]);
+                customizeContent = customizeContent.replace("8.5A", json.results[i].vote_average);
+                customizeContent = customizeContent.replace("langA", json.results[i].original_language);
+                customizeContent = customizeContent.replace("AltA", `${json.results[i].name} movie`);
+                customizeContent = customizeContent.replace("Adi", json.results[i].overview);
+                myLi.innerHTML = customizeContent;
+                ulTopRated.appendChild(myLi);
+            }
+        })
 }
 
 
@@ -226,9 +226,9 @@ popularr.onclick = function () {
     let container = document.querySelectorAll(".movies-list");
     container[2].parentNode.removeChild(container[2]);
     fetch('https://api.themoviedb.org/3/tv/popular?api_key=56a546836d8b52c7e7cdc77d062ed8c7&language=en-US&page=1')
-    .then(response => response.json())
-    .then(json =>{
-        let originalContent = `
+        .then(response => response.json())
+        .then(json => {
+            let originalContent = `
         <div class="movie-card">
                 <figure class="card-banner">
                 <div class="details-card">Adi</div>
@@ -252,30 +252,30 @@ popularr.onclick = function () {
                 </div>
                 </div>
                 `;
-        let sectionOfTopRated = document.getElementById("tvShows");
-        let ulTopRated = document.createElement("ul");
-        sectionOfTopRated.appendChild(ulTopRated); 
-        ulTopRated.className = 'movies-list';
-        for (let i = 0; i < json.results.length; i++) {
-            let myLi = document.createElement("li");
-            let customizeContent = originalContent;
-            customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
-            customizeContent = customizeContent.replace("titleA", json.results[i].name);
-            customizeContent = customizeContent.replace("2022A", json.results[i].first_air_date.split("-")[0]);
-            customizeContent = customizeContent.replace("8.5A", json.results[i].vote_average);
-            customizeContent = customizeContent.replace("langA", json.results[i].original_language);
-            customizeContent = customizeContent.replace("AltA", `${json.results[i].name} movie`);
-            customizeContent = customizeContent.replace("Adi", json.results[i].overview);
-            myLi.innerHTML = customizeContent;
-            ulTopRated.appendChild(myLi);
-        }
-    })
+            let sectionOfTopRated = document.getElementById("tvShows");
+            let ulTopRated = document.createElement("ul");
+            sectionOfTopRated.appendChild(ulTopRated);
+            ulTopRated.className = 'movies-list';
+            for (let i = 0; i < json.results.length; i++) {
+                let myLi = document.createElement("li");
+                let customizeContent = originalContent;
+                customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
+                customizeContent = customizeContent.replace("titleA", json.results[i].name);
+                customizeContent = customizeContent.replace("2022A", json.results[i].first_air_date.split("-")[0]);
+                customizeContent = customizeContent.replace("8.5A", json.results[i].vote_average);
+                customizeContent = customizeContent.replace("langA", json.results[i].original_language);
+                customizeContent = customizeContent.replace("AltA", `${json.results[i].name} movie`);
+                customizeContent = customizeContent.replace("Adi", json.results[i].overview);
+                myLi.innerHTML = customizeContent;
+                ulTopRated.appendChild(myLi);
+            }
+        })
 }
 
 window.onload = function () {
     popularr.classList.add("focused");
 }
 
-document.body.addEventListener("click",function(e) {
+document.body.addEventListener("click", function (e) {
     e.target.querySelector(".details-card").classList.toggle("active");
 });
