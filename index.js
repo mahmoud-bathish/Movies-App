@@ -204,7 +204,7 @@ topp.onclick = function () {
             let ulTopRated = document.createElement("ul");
             sectionOfTopRated.appendChild(ulTopRated);
             ulTopRated.className = 'movies-list';
-            for (let i = 0; i < json.results.length; i++) {
+            for (let i = 0; i < json.results.length - 1; i++) {
                 let myLi = document.createElement("li");
                 let customizeContent = originalContent;
                 customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
