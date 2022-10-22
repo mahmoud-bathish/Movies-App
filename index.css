@@ -284,6 +284,7 @@ body.active {
     overflow: hidden;
     margin-bottom: 20px;
     transition: var(--transition-1);
+    cursor: pointer;
 }
 
 .movie-card .card-banner::after {
