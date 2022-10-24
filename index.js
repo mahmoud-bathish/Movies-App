@@ -63,7 +63,7 @@ fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=56a546836d8b52c7e7cdc
             </div>
             </div>
                         `;
-        for (let i = 0; i < json.results.length; i++) {
+        for (let i = 0; i < 12; i++) {
             let myLi = document.createElement("li");
             let customizeContent = originalContent;
             customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
@@ -107,7 +107,7 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=56a546836d8b52c7e7cd
                         </div>
                         </div>
                         `;
-        for (let i = 0; i < json.results.length; i++) {
+        for (let i = 0; i < 12; i++) {
             let myLi = document.createElement("li");
             let customizeContent = originalContent;
             customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
@@ -151,7 +151,7 @@ fetch('https://api.themoviedb.org/3/tv/popular?api_key=56a546836d8b52c7e7cdc77d0
                         </div>
                         </div>
                         `;
-        for (let i = 0; i < json.results.length; i++) {
+        for (let i = 0; i < 12; i++) {
             let myLi = document.createElement("li");
             let customizeContent = originalContent;
             customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
@@ -204,7 +204,7 @@ topp.onclick = function () {
             let ulTopRated = document.createElement("ul");
             sectionOfTopRated.appendChild(ulTopRated);
             ulTopRated.className = 'movies-list';
-            for (let i = 0; i < json.results.length - 1; i++) {
+            for (let i = 0; i < 12; i++) {
                 let myLi = document.createElement("li");
                 let customizeContent = originalContent;
                 customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
@@ -256,7 +256,7 @@ popularr.onclick = function () {
             let ulTopRated = document.createElement("ul");
             sectionOfTopRated.appendChild(ulTopRated);
             ulTopRated.className = 'movies-list';
-            for (let i = 0; i < json.results.length; i++) {
+            for (let i = 0; i < 12; i++) {
                 let myLi = document.createElement("li");
                 let customizeContent = originalContent;
                 customizeContent = customizeContent.replace("AA", `https://image.tmdb.org/t/p/original${json.results[i].backdrop_path}`);
